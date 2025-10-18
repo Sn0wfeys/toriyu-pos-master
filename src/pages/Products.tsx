@@ -91,13 +91,15 @@ const Products = () => {
                   <span className="text-sm text-muted-foreground">Stok Saat Ini:</span>
                   <span className="font-semibold flex items-center gap-1">
                     <Package className="h-4 w-4" />
-                    {product.current_stock_units} botol
+                    {product.current_stock_units} botol ({Math.floor(product.current_stock_units / product.units_per_box)} dus)
                   </span>
                 </div>
                 
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-muted-foreground">Stok Minimum:</span>
-                  <span className="font-medium">{product.minimum_stock_units} botol</span>
+                  <span className="font-medium">
+                    {product.minimum_stock_units} botol ({Math.floor(product.minimum_stock_units / product.units_per_box)} dus)
+                  </span>
                 </div>
 
                 <div className="pt-3 border-t space-y-2">
