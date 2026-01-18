@@ -34,7 +34,7 @@ const Auth = () => {
           title: "Berhasil masuk!",
           description: "Selamat datang di sistem kasir Toriyu Water",
         });
-        navigate("/");
+        navigate("/admin");
       } else {
         const { error } = await supabase.auth.signUp({
           email,
@@ -44,7 +44,7 @@ const Auth = () => {
               full_name: fullName,
               role: "admin",
             },
-            emailRedirectTo: `${window.location.origin}/`,
+            emailRedirectTo: `${window.location.origin}/admin`,
           },
         });
 
